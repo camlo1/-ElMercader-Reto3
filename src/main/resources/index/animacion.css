@@ -1,0 +1,42 @@
+
+
+
+.contenedor-fondo {
+   
+    
+    height: 90vh;
+    
+    background: linear-gradient(#0c47e9be, #0b2e57 );
+    color: rgb(245, 238, 238);
+    
+    /* position: relative; */
+    overflow-y: scroll;
+   
+    
+}
+
+.contenedor-fondo-animado::-webkit-scrollbar{
+
+    width: 10px;
+}
+.contenedor-fondo-animado::-webkit-scrollbar-thumb{
+    background:rgb(133, 141, 218);
+    border-radius: 10px;
+}
+
+/* .seccion-contenido {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+    align-items: center;
+    justify-content: center;
+}
+ */
+
+
+
+
+
+
+
+

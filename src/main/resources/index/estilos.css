@@ -1,0 +1,73 @@
+*´{
+    
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(#0c47e9be, #91a2b4)
+}
+.navbar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    background: linear-gradient(#0c47e9be, #0b2e57);
+    transition: 0.4s;
+
+}
+.nav-link{
+    font-size: 1.25em;
+}
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover{
+    background-color: #ffffff26;
+}
+.dropdown-menu{
+    background-color: rgb(148, 135, 222);
+}
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover{
+    background-color: cadetblue;
+}
+
+.my-Container{
+    transition: 0.4s;
+}
+ /* para  el  navbar */
+ .active-nav{
+     margin-left: 0;
+ }
+
+ /* para  la  seccion proncipal */
+ .active-cont{
+     margin-left: 250px;
+ }
+ #Consultar{
+     background-color: rgb(34, 8, 59);
+     color: cornsilk;
+ }
+ #menu-btn{
+     
+     background-color: rgb(51, 7, 73);
+     color: honeydew;
+     
+ }
+
+ #menu-btn:focus{
+     box-shadow: 0 0 0 0.25rem black;
+ }
+.my-Container{
+    align-items: center;
+}
+  
+  .slide{
+
+    margin-top: 100px;
+            
+  }
+ 
