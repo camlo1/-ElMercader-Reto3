@@ -1,6 +1,6 @@
 function traerInformacionUser(){
     $.ajax({
-        url: "http://129.151.114.170:8080/api/user/all",
+        url: "http://140.238.133.71:8080/api/user/all",
         
         
         type:"GET",
@@ -40,31 +40,7 @@ const pintarRespuestaUser = (respuesta)=>{
     $("#resultado2").html(tabla);
 }
 
-/* function pintarRespuestaUser(respuesta){
-    let myTable = "<div class='container'><table class='table text-center'>" + "<thead><tr><th>ID</th><th>identification</th><th>name</th><th>address</th><th>cellPhone</th><th>email</th><th>password</th><th>zone</th><th>type</th></tr></thead>";
-    for(i=0;i<respuesta.length;i++){
-        myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].id+"</td>";
-        myTable+="<td>"+respuesta[i].identification+"</td>";
-        myTable+="<td>"+respuesta[i].name+"</td>";
-        myTable+="<td>"+respuesta[i].address+"</td>";
-        myTable+="<td>"+respuesta[i].cellPhone+"</td>";
-        myTable+="<td>"+respuesta[i].email+"</td>";
-        myTable+="<td>"+respuesta[i].password+"</td>";
-        myTable+="<td>"+respuesta[i].zone+"</td>";
-        myTable+="<td>"+respuesta[i].type+"</td>";
-        myTable+="<td> <button onclick='borrarUser("+respuesta[i].id+")' class='btn btn-danger'> Borrar</button>";
-        myTable+="<td> <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Actualizar</button>"
-        
 
-        myTable+="</tr>";
-        
-       
-    }
-    myTable+="</table></div>";        
-    $("#resultado2").html(myTable);
-
-} */
 const identification = $("#identification").val();
 const name = $("#name").val();
 const address = $("#address").val();  
@@ -84,7 +60,7 @@ function borrarUser(id){
     console.log(myData);
     $.ajax({
         
-        url: "http://129.151.114.170:8080/api/user/" + id,
+        url: "http://140.238.133.71:8080/api/user/" + id,
  
         type:"DELETE",
         data:dataToSend,
@@ -129,7 +105,7 @@ function editarUser(id) {
     console.log(myData);
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://129.151.114.170:8080/api/user/update",
+        url: "http://140.238.133.71:8080/api/user/update",
 
         type: "PUT",
         data: dataToSend,

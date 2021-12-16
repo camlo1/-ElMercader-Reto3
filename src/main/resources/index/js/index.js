@@ -32,7 +32,7 @@ const iniciarSesion = () => {
 
             // en  este metodo   ajax llamamos al  email   y   al   passwoerd que  estan   creado   en  el  back con   el  get
         $.ajax({
-            url:"http://129.151.114.170:8080/api/user/" +email +"/"+password ,
+            url:"http://140.238.133.71:8080/api/user/" +email +"/"+password ,
             type: "GET",
             dataType: 'json',
             success:function (respuesta) {

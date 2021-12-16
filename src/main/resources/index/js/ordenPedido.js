@@ -1,6 +1,7 @@
 let perfilGlobal;
 let registerDay =new Date().toUTCString();
 let idOrden=$("#id").val();
+
 const cargarsesionStore =()=>{
     const user = JSON.parse(sessionStorage.getItem("user"));
     perfilGlobal =user;
@@ -63,7 +64,7 @@ const datosOrden = ()=>{
 
 function traerOrdenes(){
     $.ajax({
-        url: "http://129.151.114.170:8080/api/order/all",
+        url: "http://140.238.133.71:8080/api/order/all",
         
         
         type:"GET",
@@ -79,14 +80,14 @@ function traerOrdenes(){
 
 function traerGadgets(){
     $.ajax({
-        url: "http://129.151.114.170:8080/api/gadget/all",
+        url: "http://140.238.133.71:8080/api/gadget/all",
         
         
         type:"GET",
         datatype:"JSON",
-        success:function(respuesta){
-            console.log(respuesta);
-            pintarRespuestaGadgets(respuesta);    
+        success:function(respuesta1){
+            console.log(respuesta1);
+            pintarRespuestaGadgets(respuesta1);    
         }
 
     });
@@ -98,25 +99,25 @@ const cantidades = []
 console.log(cantidades)
 
 const pintarRespuestaGadgets = (gadgets)=>{
-    respuesta=gadgets;
+    respuesta1=gadgets;
     let tabla = `<div class='overflow-scroll '>
         <table class="border text-center" >
         <tr><th>ID</th><th>Brand</th><th>Category</th><th>Name</th><th>Description</th><th>Price</th><th>Availability</th><th>Quantity</th><th>Photography</th></tr>
         <body>
     `;
 
-    for(let i = 0; i<respuesta.length; i++){
+    for(let i = 0; i<respuesta1.length; i++){
         tabla += `
         <tr>
-            <td class='border'>${respuesta[i].id}</td>
-            <td class='border'>${respuesta[i].brand}</td>
-            <td class='border'>${respuesta[i].category}</td>
-            <td class='border'>${respuesta[i].name}</td>
-            <td class='border'>${respuesta[i].description}</td>
-            <td class='border'>${respuesta[i].price}</td>
-            <td class='border'>${respuesta[i].availability}</td>
-            <td class='border'>${respuesta[i].quantity}</td>
-            <td class='border'><img src="${respuesta[i].photography}" height="80"></td>
+            <td class='border'>${respuesta1[i].id}</td>
+            <td class='border'>${respuesta1[i].brand}</td>
+            <td class='border'>${respuesta1[i].category}</td>
+            <td class='border'>${respuesta1[i].name}</td>
+            <td class='border'>${respuesta1[i].description}</td>
+            <td class='border'>${respuesta1[i].price}</td>
+            <td class='border'>${respuesta1[i].availability}</td>
+            <td class='border'>${respuesta1[i].quantity}</td>
+            <td class='border'><img src="${respuesta1[i].photography}" height="80"></td>
             <td class='border'> <button onclick='agregarGadget(${i})' class='btn btn-primary'> Agregar</button>
         </tr>`;
     }
@@ -131,6 +132,7 @@ const agregarCant = ()=>{
         console.log();
         alert ('debe ingresar cantidad');
         return;
+    
     }
     cantidades.push(cantidad1)
     $("#cantidad").val("");
@@ -138,7 +140,7 @@ const agregarCant = ()=>{
 }
 
 const agregarGadget = (indexRespuesta)=>{
-    pedido.push(respuesta[indexRespuesta]);
+    pedido.push(respuesta1[indexRespuesta]);
    
     
     $("#crearGadgetModal2").modal('show');     
@@ -204,7 +206,7 @@ const enviarOrden = ()=>{
     console.log(orden);
 
     $.ajax({
-        url:"http://129.151.114.170:8080/api/order/new",
+        url:"http://140.238.133.71:8080/api/order/new",
         type: "POST",
         dataType: 'JSON',
         headers: {

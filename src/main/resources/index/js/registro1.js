@@ -51,7 +51,7 @@ function crearUsuario (){
     };
    
                 $.ajax({
-                    url:"http://129.151.114.170:8080/api/user/new",
+                    url:"http://140.238.133.71:8080/api/user/new",
                     type: "POST",
                     dataType: 'JSON',
                     headers: {
@@ -93,7 +93,7 @@ const limpiarCampos = ()=>{
         $.ajax ({
             
             type: 'GET',   
-            url:"http://129.151.114.170:8080/api/user/emailexist/"+email,     
+            url:"http://140.238.133.71:8080/api/user/emailexist/"+email,     
             dataType: 'json',
             success: function (respuesta){
                 console.log(respuesta);
